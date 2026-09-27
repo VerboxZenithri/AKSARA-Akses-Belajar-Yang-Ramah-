@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  background-color: #FBF8F3;
+  color: #262421;
+}
+
+body {
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Fokus keyboard yang jelas terlihat -- penting untuk aksesibilitas siswa ABK */
+:focus-visible {
+  outline: 3px solid #2F6F6B;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #E7E1D6;
+  border-radius: 8px;
+}
+
+.input {
+  @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink placeholder:text-ink/30 focus:border-primary focus:ring-0;
+}
+
+.textarea {
+  @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink placeholder:text-ink/30 focus:border-primary focus:ring-0 resize-y;
+}
